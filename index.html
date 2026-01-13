@@ -91,7 +91,8 @@
             margin-top: 40px;
         }
 
-        .icon-circle {
+        /* General Icon Circle Styles */
+        .icon-base {
             width: 60px;
             height: 60px;
             background: rgba(255, 255, 255, 0.9);
@@ -104,7 +105,12 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
-        
+
+        .icon-base:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Server Icon Specifics */
         .icon-circle img {
             width: 60%;
             height: 60%;
@@ -112,29 +118,12 @@
             border-radius: 0%;
         }
         
-        .icon-circlek {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
+        /* Kakao Icon Specifics */
         .icon-circlek img {
             width: 70%;
             height: 70%;
             object-fit: cover;
             border-radius: 50%;
-        }
-
-        .icon-circle:hover {
-            transform: translateY(-5px);
         }
 
         .cta-section {
@@ -215,7 +204,6 @@
             object-fit: cover;
             border-radius: 50%;
         } 
-        
 
         .feature-card h3 {
             font-size: 24px;
@@ -227,57 +215,6 @@
             font-size: 15px;
             color: #666;
             line-height: 1.7;
-        }
-
-        .map-section {
-            padding: 80px 20px;
-            background: linear-gradient(180deg, rgba(180, 200, 220, 0.3) 0%, rgba(200, 220, 240, 0.2) 100%);
-        }
-
-        .map-container {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .map-image {
-            width: 100%;
-            height: 400px;
-            background: linear-gradient(135deg, #4a7c9e 0%, #6ba3c8 50%, #5d8faf 100%);
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 24px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .map-image::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                repeating-linear-gradient(0deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px),
-                repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(255,255,255,0.03) 10px, rgba(255,255,255,0.03) 20px);
-        }
-
-        .map-section h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
-        .map-section p {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.8;
-            max-width: 700px;
-            margin: 0 auto;
         }
 
         .crossplay-section {
@@ -364,8 +301,7 @@
             .cta-section h2 { font-size: 32px; }
             .feature-card { padding: 30px 15px; }
             .icon-row { gap: 20px; }
-            .icon-circle { width: 50px; height: 50px; font-size: 24px; }
-            .icon-circlek { width: 50px; height: 50px; font-size: 24px; }
+            .icon-base { width: 50px; height: 50px; font-size: 24px; }
             .platform-icons { flex-wrap: wrap; }
         }
     </style>
@@ -384,10 +320,12 @@
             <h1>노빌 평지생존</h1>
             <p>베드락 에디션 평지생존<br>서버에요.</p>
             <div class="icon-row">
-                <div class="icon-circlek" title="카카오톡">
-                <img src="https://raw.githubusercontent.com/hajs110208/sd6serverpage/refs/heads/main/images/kakaotalk.png" alt="Kakaotalk">  </div>
-                <div class="icon-circle" title="서버">
-                <img src="https://cdn-icons-png.flaticon.com/512/157/157359.png" alt="Server"> </div>
+                <div class="icon-base icon-circlek" title="카카오톡">
+                    <img src="https://raw.githubusercontent.com/hajs110208/sd6serverpage/refs/heads/main/images/kakaotalk.png" alt="Kakaotalk">
+                </div>
+                <div class="icon-base icon-circle" title="서버">
+                    <img src="https://cdn-icons-png.flaticon.com/512/157/157359.png" alt="Server">
+                </div>
             </div>
         </div>
         <div class="scroll-indicator">↓</div>
@@ -399,18 +337,23 @@
         <a href="https://open.kakao.com/o/grB5R08h" class="cta-button">참가하기</a>
     </section>
 
+    <section class="features">
         <div class="feature-card">
             <div class="feature-icon">
-            <img src="https://raw.githubusercontent.com/hajs110208/sd6serverpage/refs/heads/main/images/realms.jpg" alt="Realms"></div>
+                <img src="https://raw.githubusercontent.com/hajs110208/sd6serverpage/refs/heads/main/images/realms.jpg" alt="Realms">
+            </div>
             <h3>Minecraft Realms 서버</h3>
             <p>주기적으로 백업이 진행되는 안전한 서버로 운영됩니다.</p>
         </div>
         <div class="feature-card">
             <div class="feature-icon">
-            <img src="https://minecraft.wiki/images/Impulse_Command_Block.gif?fb024" alt="commandblock"></div>
+                <img src="https://minecraft.wiki/images/Impulse_Command_Block.gif?fb024" alt="commandblock">
+            </div>
             <h3>지속적인 개발</h3>
             <p>버그를 최소화하고, 지속적으로 새로운 컨텐츠도 개발됩니다.</p>
         </div>
+    </section>
+
     <section class="crossplay-section">
         <div class="crossplay-header">
             <h2>베드락 에디션 서버</h2>
@@ -427,24 +370,7 @@
         <p>2025. Jan. 9 <strong>sd6server.xyz</strong></p>
     </footer>
 
-    <div style="position: fixed; top: 90px; right: 20px; background: rgba(139, 122, 184, 0.9); color: white; padding: 15px 25px; border-radius: 10px; opacity: 0; transform: translateX(400px); transition: all 0.5s; z-index: 2000;" id="copyNotice">
-        Server address copied!
-    </div>
-
     <script>
-        function copyIP() {
-            const ip = 'null';
-            navigator.clipboard.writeText(ip).then(() => {
-                const notice = document.getElementById('copyNotice');
-                notice.style.opacity = '1';
-                notice.style.transform = 'translateX(0)';
-                setTimeout(() => {
-                    notice.style.opacity = '0';
-                    notice.style.transform = 'translateX(400px)';
-                }, 3000);
-            });
-        }
-
         document.querySelector('.scroll-indicator').addEventListener('click', () => {
             document.querySelector('.cta-section').scrollIntoView({ behavior: 'smooth' });
         });
@@ -454,7 +380,6 @@
                 alert('카카오톡 오픈채팅방에 먼저 들어와 주세요.');
             });
         });
-        
         
         document.querySelectorAll('.icon-circlek').forEach(icon => {
             icon.addEventListener('click', () => {
