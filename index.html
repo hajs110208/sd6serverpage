@@ -11,6 +11,13 @@
             box-sizing: border-box;
         }
 
+        /* FIX: Prevent images from ever overflowing their containers */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         body {
             font-family: 'system-ui', Raleway, -apple-system, BlinkMacSystemFont, sans-serif;
             color: #333;
@@ -61,11 +68,13 @@
             text-align: center;
             background-image: url("https://raw.githubusercontent.com/hajs110208/sd6serverpage/refs/heads/main/images/spawn.jpg");
             background-size: cover;
+            background-position: center; /* FIX: Centers the background image */
             padding: 100px 20px 60px;
         }
 
         .hero-content {
             max-width: 600px;
+            width: 100%; /* Ensure content doesn't overflow */
         }
 
         .hero h1 {
@@ -74,6 +83,7 @@
             margin-bottom: 20px;
             color: #fff;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            word-break: keep-all; /* Prevent awkward breaks in Korean */
         }
 
         .hero p {
@@ -89,6 +99,7 @@
             gap: 30px;
             justify-content: center;
             margin-top: 40px;
+        } /* FIX: THIS CLOSING BRACKET WAS MISSING */
             
         .icon-base {
             width: 60px;
@@ -102,6 +113,7 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             cursor: pointer;
             transition: transform 0.3s;
+            overflow: hidden; /* FIX: Ensures images stay inside the circle */
         }
 
         .icon-base:hover {
@@ -111,9 +123,9 @@
         .icon-circle img {
             width: 60%;
             height: 60%;
-            object-fit: cover;
-            border-radius: 0%;
+            object-fit: contain; /* Changed to contain to prevent cutting off */
         }
+        
         .icon-circlek img {
             width: 70%;
             height: 70%;
@@ -191,6 +203,7 @@
             align-items: center;
             justify-content: center;
             font-size: 36px;
+            overflow: hidden; /* FIX: Keeps images circular */
         }
         
         .feature-icon img {
